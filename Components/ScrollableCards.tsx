@@ -5,7 +5,7 @@ export default function ScrollableCards() {
   return (
     <View>
         <View style={styles.headerbg}>
-            <Text style={styles.headingtext}>ScrollableCards</Text>
+            <Text style={styles.headingtext}>Scrollable Cards</Text>
         </View>
       <ScrollView horizontal={true} >
         <View style={styles.card}>
