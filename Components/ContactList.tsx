@@ -36,9 +36,9 @@ export default function ContactList() {
         <ScrollView style={styles.container} scrollEnabled={false}>
             {contacts.map(({uid, name, status, imageUrl}) => (
                 <View key={uid} style={styles.userCard}>
-                    <View style={styles.imgcontainer}>
+                    {/* <View style={styles.imgcontainer}> */}
                         <Image source={{uri:imageUrl}} style={styles.userImg} />
-                    </View>
+                    {/* </View> */}
                     <Text style={styles.userName}>{name}</Text>
                     <Text style={styles.userStatus}>{status}</Text>
                 </View>
