@@ -19,8 +19,9 @@ export default function ActionCards() {
             }}
             style={styles.cardImage} />
             <View style={styles.bodyContainer}>
-                <Text numberOfLines={3}>Welcome to a journey of discovery through India's national parks. With its rich biodiversity and stunning landscapes, this diverse nation is home to a treasure trove of natural wonders waiting to be explored. From the mighty Bengal tigers roaming freely in the dense jungles of Ranthambore National Park to the rare and elusive snow leopards of Hemis National Park in the majestic Himalayas, India's national parks offer an unparalleled opportunity to connect with nature.</Text>
+                <Text numberOfLines={3} style={styles.bodytext}>Welcome to a journey of discovery through India's national parks. With its rich biodiversity and stunning landscapes, this diverse nation is home to a treasure trove of natural wonders waiting to be explored. From the mighty Bengal tigers roaming freely in the dense jungles of Ranthambore National Park to the rare and elusive snow leopards of Hemis National Park in the majestic Himalayas, India's national parks offer an unparalleled opportunity to connect with nature.</Text>
             </View>
+            <View style={styles.line}></View>
             <View style={styles.footer}>
                 <TouchableOpacity>
                     <Text onPress={() => openWebsiteLink('https://ranthamborenationalpark-india.com/indias-national-parks/#google_vignette')} style={styles.socialLinks}>Read More</Text>
@@ -43,31 +44,66 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: 'bold',
         padding: 10,
-        marginLeft: 10
+        marginLeft: 10,
     },
     card: {
         padding: 10,
         borderRadius: 8,
+        backgroundColor: '#1d1d1d',
 
     },
     elevatedCard: {
         marginVertical: 12,
         marginHorizontal: 15,
-        backgroundColor: '#FFFFFF',
         elevation: 3
     },
     headingContainer: {},
     headingText: {
+        padding: 10,
         fontSize: 18,
-        alignItems: 'center',
-        
-
+        flexDirection: 'row',
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        textAlign: 'center',
+        color: '#FFF'
     },
     cardImage: {
-        height: 100,
+        height: 150,
         borderRadius: 8,
     },
-    bodyContainer: {},
-    footer: {},
-    socialLinks: {}
+    bodyContainer: {
+        padding: 8,
+        backgroundColor: '#1d1d1d',
+        marginVertical: 10,
+        marginHorizontal: 5,
+        elevation: 5,
+    },
+    bodytext: {
+        color: '#FFFFFF'
+    },
+    line: {
+        backgroundColor: '#ffffff',
+        padding: 0.2,
+        marginVertical: 10
+    },
+    footer: {
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        padding: 5,
+        // marginTop: 1,
+    },
+    socialLinks: {
+        color: '#FFFFFF',
+        backgroundColor: '#1d1d1d',
+        borderColor: '#fff',
+        borderWidth: 1,
+        paddingHorizontal: 20,
+        paddingVertical: 10,
+        borderRadius: 20,
+        shadowColor: '#333',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 1,
+        shadowRadius: 10,
+    }
+    
 })
