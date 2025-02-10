@@ -1,5 +1,4 @@
 import { ScrollView, StyleSheet, Text, View, Image } from 'react-native'
-import React, { useSyncExternalStore } from 'react'
 
 export default function ContactList() {
     const contacts = [
@@ -36,11 +35,11 @@ export default function ContactList() {
         <ScrollView style={styles.container} scrollEnabled={false}>
             {contacts.map(({uid, name, status, imageUrl}) => (
                 <View key={uid} style={styles.userCard}>
-                    {/* <View style={styles.imgcontainer}> */}
                         <Image source={{uri:imageUrl}} style={styles.userImg} />
-                    {/* </View> */}
-                    <Text style={styles.userName}>{name}</Text>
-                    <Text style={styles.userStatus}>{status}</Text>
+                    <View>
+                        <Text style={styles.userName}>{name}</Text>
+                        <Text style={styles.userStatus}>{status}</Text>
+                    </View>
                 </View>
             ))}
             {/* You can use () => () to directly return a call back but when you use () => {}  you must specify a "return" inside the {}*/}
@@ -75,19 +74,30 @@ const styles = StyleSheet.create({
         height: 60,
         width : 60,
         borderRadius: 60 / 2, //Circle pfp to be half of the width (thats the idea)
+        padding: 4,
+        marginRight: 10,
     },
     userCard: {
         padding: 8,
         margin: 2,
-        backgroundColor: '#1d1d1d'
+        backgroundColor: '#1d1d1d',
+        flexDirection: 'row',
+        borderRadius: 12,
+        alignItems: 'center',
+        // justifyContent: 'space-evenly',
+        marginVertical: 4
     },
     userName: {
         color: "#fff",
-        margin: 4,
+        marginTop: 2,
+        marginBottom: 1,
         paddingTop: 4
     },
     userStatus: {
         color: "#fff",
-        margin: 4
+        marginBottom: 2,
+        marginTop: 1,
+        flexWrap: 'wrap',
+        width: 300
     }
 })
