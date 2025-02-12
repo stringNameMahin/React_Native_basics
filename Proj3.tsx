@@ -20,7 +20,7 @@ export default function Proj3() {
     const [useNums, setuseNums] = useState(false)
     const [useSymbols, setuseSymbols] = useState(false)
 
-    const genPassString = (passwordLength: number) => {
+    const genPassString = (PassLength: number) => {
         let characterList = ''
         const upperCaseChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
         const lowerCaseChars = 'abcdefghijklmnopqrstuvwxyz'
@@ -40,14 +40,14 @@ export default function Proj3() {
             characterList += specialChars
         }
 
-        const passwordFinal = createPass(characterList, passwordLength)
+        const passwordFinal = createPass(characterList, PassLength)
         setpassword(passwordFinal)
         setisPassGen(true)
     }
 
-    const createPass = (characters: string, passwordLength: number) => {
+    const createPass = (characters: string, PassLength: number) => {
         let result = ''
-        for (let i = 0; i < passwordLength; i++) {
+        for (let i = 0; i < PassLength; i++) {
             const characterIndex = Math.round(Math.random() * characters.length)
             result += characters.charAt(characterIndex)
         }
@@ -70,11 +70,11 @@ export default function Proj3() {
                 <View style={styles.formContainer}>
                     <Text style={styles.title}>Password Generator</Text>
                     <Formik
-                        initialValues={{passwordLength:'' }}
+                        initialValues={{PassLength:'' }}
                         validationSchema={PasswordSchema}
                         onSubmit={values => {
                             console.log(values);
-                            genPassString(+values.passwordLength) // the + sign basically casts it to a number type.
+                            genPassString(+values.PassLength) // the + sign basically casts it to a number type.
                         }}
                     >
                         {({
@@ -91,16 +91,16 @@ export default function Proj3() {
                             <View style={styles.inputWrapper}>
                                 <View style={styles.inputColumn}>
                                     <Text style={styles.heading}>Password Length</Text>
-                                    {touched.passwordLength && errors.passwordLength && (
+                                    {touched.PassLength && errors.PassLength && (
                                     <Text style={styles.errorText}>
-                                        {errors.passwordLength}
+                                        {errors.PassLength}
                                     </Text>
                                 )};
                                 </View>
                                 <TextInput 
                                     style={styles.inputStyle}
-                                    value={values.passwordLength}
-                                    onChangeText={handleChange('passwordLength')}
+                                    value={values.PassLength}
+                                    onChangeText={handleChange('PassLength')}
                                     placeholder='Ex.8'
                                     keyboardType='numeric'
                                     />
@@ -118,7 +118,7 @@ export default function Proj3() {
                                 <Text style={styles.heading}>Include Uppercase</Text>
                                 <BouncyCheckbox
                                 useBuiltInState={false}
-                                isChecked={lowercase}
+                                isChecked={uppercase}
                                 onPress={() => setUppercase(!uppercase)}
                                 >
                                 </BouncyCheckbox>
@@ -127,7 +127,7 @@ export default function Proj3() {
                                 <Text style={styles.heading}>Include Numbers</Text>
                                 <BouncyCheckbox
                                 useBuiltInState={false}
-                                isChecked={lowercase}
+                                isChecked={useNums}
                                 onPress={() => setuseNums(!useNums)}
                                 >
                                 </BouncyCheckbox>
@@ -136,7 +136,7 @@ export default function Proj3() {
                                 <Text style={styles.heading}>Include Symbols</Text>
                                 <BouncyCheckbox
                                 useBuiltInState={false}
-                                isChecked={lowercase}
+                                isChecked={useSymbols}
                                 onPress={() => setuseSymbols(!useSymbols)}
                                 >
                                 </BouncyCheckbox>
@@ -195,9 +195,10 @@ const styles = StyleSheet.create({
         fontSize: 26,
         fontWeight: '600',
         marginBottom: 2,
+        color: '#1d1d1d'
     },
     description: {
-        color: '#758283',
+        color: '#1d1d1d',
         marginBottom: 8,
     },
     heading: {
