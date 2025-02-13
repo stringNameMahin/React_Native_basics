@@ -105,7 +105,7 @@ export default function Proj3() {
                                     keyboardType='numeric'
                                     />
                             </View>
-                            <View style={styles.inputWrapper}>
+                            <View style={styles.inputWrapper2}>
                                 <Text style={styles.heading}>Include lowercase</Text>
                                 <BouncyCheckbox
                                 useBuiltInState={false}
@@ -114,7 +114,7 @@ export default function Proj3() {
                                 >
                                 </BouncyCheckbox>
                             </View>
-                            <View style={styles.inputWrapper}>
+                            <View style={styles.inputWrapper2}>
                                 <Text style={styles.heading}>Include Uppercase</Text>
                                 <BouncyCheckbox
                                 useBuiltInState={false}
@@ -123,7 +123,7 @@ export default function Proj3() {
                                 >
                                 </BouncyCheckbox>
                             </View>
-                            <View style={styles.inputWrapper}>
+                            <View style={styles.inputWrapper2}>
                                 <Text style={styles.heading}>Include Numbers</Text>
                                 <BouncyCheckbox
                                 useBuiltInState={false}
@@ -132,7 +132,7 @@ export default function Proj3() {
                                 >
                                 </BouncyCheckbox>
                             </View>
-                            <View style={styles.inputWrapper}>
+                            <View style={styles.inputWrapper2}>
                                 <Text style={styles.heading}>Include Symbols</Text>
                                 <BouncyCheckbox
                                 useBuiltInState={false}
@@ -209,6 +209,11 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         flexDirection: 'row',
+    },
+    inputWrapper2:{
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        padding: 5,
     },
     inputColumn: {
         flexDirection: 'column',
