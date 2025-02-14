@@ -1,3 +1,5 @@
+// Password generator app
+
 import { SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React, { useState } from 'react'
 import * as Yup from 'yup'

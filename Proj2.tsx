@@ -1,3 +1,5 @@
+//Basic app to learn basic componenets and styling
+
 import { View, Text, SafeAreaView, ScrollView } from 'react-native'
 import React from 'react'
 import Flatcards from './Components/Flatcards'

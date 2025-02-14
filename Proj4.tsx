@@ -1,3 +1,5 @@
+// Bg color randomizer app
+
 import { StatusBar, StyleSheet, Text, TouchableOpacity, View, VirtualizedList } from 'react-native'
 import React, { useState } from 'react'
 
