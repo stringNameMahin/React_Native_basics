@@ -10,5 +10,6 @@ import Proj2 from './Proj2' // this command can be used to call the Proj2.tsx fi
 
 import {name as appName} from './app.json';
 import Proj3 from './Proj3'
+import Proj4 from './Proj4'
 
-AppRegistry.registerComponent(appName, () => Proj3);
+AppRegistry.registerComponent(appName, () => Proj4);
