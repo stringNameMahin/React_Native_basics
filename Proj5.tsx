@@ -2,7 +2,7 @@
 
 import { Image, ImageSourcePropType, Pressable, StyleSheet, Text, View } from 'react-native'
 import React, { PropsWithChildren, useState } from 'react'
-import ReactNativeHapticFeedback from "react-native-haptic-feedback";
+// import ReactNativeHapticFeedback from "react-native-haptic-feedback";
 
 import DiceOne from './Img/One.png'
 import DiceTwo from './Img/Two.png'
