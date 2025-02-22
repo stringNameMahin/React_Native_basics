@@ -12,5 +12,6 @@ import {name as appName} from './app.json';
 import Proj3 from './Proj3'
 import Proj4 from './Proj4'
 import Proj5 from './Proj5'
+import DiceApp from './DiceApp'
 
-AppRegistry.registerComponent(appName, () => Proj5);
+AppRegistry.registerComponent(appName, () => Proj4);
